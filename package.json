@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-native-file-picker",
+        "scope": null,
+        "escapedName": "react-native-file-picker",
+        "name": "react-native-file-picker",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\2nd Start\\ReactNative\\clenet"
+    ]
+  ],
+  "_from": "react-native-file-picker@latest",
+  "_id": "react-native-file-picker@0.0.11",
+  "_inCache": true,
+  "_location": "/react-native-file-picker",
+  "_nodeVersion": "8.0.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/react-native-file-picker_0.0.11_1521462217640_0.09780236453923252"
+  },
+  "_npmUser": {
+    "name": "fuertes",
+    "email": "fuertes90@gmail.com"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-file-picker",
+    "scope": null,
+    "escapedName": "react-native-file-picker",
+    "name": "react-native-file-picker",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-file-picker/-/react-native-file-picker-0.0.11.tgz",
+  "_shasum": "88f7ac10ee824c7b352a008dfb6c1ff86597db87",
+  "_shrinkwrap": null,
+  "_spec": "react-native-file-picker",
+  "_where": "E:\\2nd Start\\ReactNative\\clenet",
+  "author": {
+    "name": "Luis Fuertes",
+    "email": "luis.fuertes@clouddistrict.com"
+  },
+  "bugs": {
+    "url": "https://github.com/luisfuertes/react-native-file-picker/issues"
+  },
+  "dependencies": {},
+  "description": "A React Native module that allows you to use native UI to select file from the device library on Android",
+  "devDependencies": {
+    "react-native": "^0.21.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-V3g9hpkItg+JMOIWdz6sf3QWSoYRc91dmnlAqZHbpf9MXLrDd471nQZFatBDLsbBTTxidQrD3LXSwjze9/NWXg==",
+    "shasum": "88f7ac10ee824c7b352a008dfb6c1ff86597db87",
+    "tarball": "https://registry.npmjs.org/react-native-file-picker/-/react-native-file-picker-0.0.11.tgz",
+    "fileCount": 300,
+    "unpackedSize": 346545
+  },
+  "gitHead": "ae187cafadbe220bfea32c52ecc4e4609a2efae9",
+  "homepage": "https://github.com/luisfuertes/react-native-file-picker#readme",
+  "keywords": [
+    "react-native",
+    "react-native-file-picker",
+    "react",
+    "native",
+    "file",
+    "picker"
+  ],
+  "license": "ISC",
+  "main": "index.android.js",
+  "maintainers": [
+    {
+      "name": "fuertes",
+      "email": "fuertes90@gmail.com"
+    }
+  ],
+  "name": "react-native-file-picker",
+  "nativePackage": true,
+  "optionalDependencies": {},
+  "readme": "# react-native-file-picker\nA React Native module that allows you to use native UI to select a file from the device library\nBased on [react-native-image-picker](https://github.com/marcshilling/react-native-image-picker)\n\nThanks to [@Lichwa](https://github.com/Lichwa) for creating this component\n\n## Install\n\n### iOS\nThis component does not currently work on iOS, instead use [react-native-document-picker](https://github.com/Elyx0/react-native-document-picker)\n\n### Android\n1. `npm install react-native-file-picker@latest --save`\n\n```gradle\n// file: android/settings.gradle\n...\n\ninclude ':react-native-file-picker'\nproject(':react-native-file-picker').projectDir = new File(settingsDir, '../node_modules/react-native-file-picker/android')\n```\n```gradle\n// file: android/app/build.gradle\n...\n\ndependencies {\n    ...\n    compile project(':react-native-file-picker')\n}\n```\n```xml\n<!-- file: android/src/main/AndroidManifest.xml -->\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.myApp\">\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n\n    <!-- add following permissions -->\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>\n    <!-- -->\n    ...\n```\n```java\n// file: MainApplication.java\n...\n\nimport com.filepicker.FilePickerPackage; // import package\n\npublic class MainApplication extends Application implements ReactApplication {\n\n   /**\n   * A list of packages used by the app. If the app uses additional views\n   * or modules besides the default ones, add more packages here.\n   */\n    @Override\n    protected List<ReactPackage> getPackages() {\n        return Arrays.<ReactPackage>asList(\n            new MainReactPackage(),\n            new FilePickerPackage() // Add package\n        );\n    }\n...\n}\n\n```\n## Usage\n1. In your React Native javascript code, bring in the native module:\n\n  ```javascript\nimport FilePickerManager from 'react-native-file-picker';\n  ```\n2. Use it like so:\n\n  When you want to display the picker:\n  ```javascript\n\n  FilePickerManager.showFilePicker(null, (response) => {\n    console.log('Response = ', response);\n\n    if (response.didCancel) {\n      console.log('User cancelled file picker');\n    }\n    else if (response.error) {\n      console.log('FilePickerManager Error: ', response.error);\n    }\n    else {\n      this.setState({\n        file: response\n      });\n    }\n  });\n  ```\n\n## News\n### Compatible with Android O\n### Compatible with all versions of RN\n### Compatible with files from Google Drive\n### Requesting permission if not exist\n### Retrieving fileName and file type\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfuertes/react-native-file-picker.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "index.d.ts",
+  "version": "0.0.11"
+}
