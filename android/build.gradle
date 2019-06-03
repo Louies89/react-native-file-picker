@@ -42,5 +42,5 @@ repositories {
 dependencies {
     def reactNativeVersion = project.hasProperty('reactNativeVersion') ? project.reactNativeVersion : "+"
 		
-    compile "com.facebook.react:react-native:$reactNativeVersion" //Previously 0.20.+
+    implementation "com.facebook.react:react-native:$reactNativeVersion" //Previously 0.20.+
 }
